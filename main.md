@@ -71,6 +71,9 @@ As you can see Native Login is design to use native platform tools.
     - email
     - sms
     - storage
+    - auth gateways
+    - strapi integration
+    - Webflow integration
   - Plugin system
     - storage
     - hooks
@@ -90,4 +93,7 @@ As you can see Native Login is design to use native platform tools.
     - mobile apps, admin panel, web app and M2M integration
   - Best practices
   - Professional services
+- IM system and security in depth
+  - the most secure web authentication
+  - 
 
