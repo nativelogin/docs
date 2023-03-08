@@ -86,21 +86,76 @@ If you choose to impose limitations on password criteria, it should be for a val
 Limiting password length may still be a good idea to conserve memory usage. A limit of 100kb is reasonable. However, users attempting to use an extremely long password are likely following password best practices, such as using a password manager, which allows them to generate and remember complex passwords even on limited mobile device keyboards.
 
 
+## Keep your username requirements user-friendly to provide a positive user experience.
+
+While it's understandable for sites or services to implement certain restrictions for usernames, such as disallowing hidden characters and whitespace at the beginning and end of a username, going too far with requirements can lead to user frustration and discourage engagement.
+
+For instance, overly strict requirements like blocking characters outside of 7-bit ASCII letters and numbers, or requiring a minimum length of eight characters, can be detrimental to the user experience. Such restrictions may offer development benefits, but at the cost of user satisfaction. Why not allow user have a Cyrillic letters and username like "Їжак"?
+
+In some cases, it may be best to assign usernames rather than allow users to create their own. If this is the approach taken for your service, it's important to ensure that the assigned username is user-friendly and easy to recall and communicate. Alphanumeric-generated IDs should avoid visually ambiguous symbols like "O0" or "l1" and it's also recommended to perform a dictionary scan on any randomly generated string to ensure there are no unintended messages embedded in the username. These same guidelines apply to auto-generated passwords as well.
+
+## Verify user's email and phone number
+
+Asking for a user's contact information is a common practice in many services, but it's essential to validate that information as soon as possible to avoid potential issues down the line. Without proper validation, users may unknowingly make a typo in their contact information, leading to frustration and lost time when they're unable to access their account.
+
+To prevent these issues, it's crucial to send a validation code or link to the provided email address or phone number as soon as possible. This can be accomplished through automated processes or manual intervention, but the key is to ensure that the contact information is accurate and belongs to the intended user.
+
+If contact information is not validated, there is a risk that the account may become orphaned and unrecoverable without manual intervention. Even worse, the contact information may belong to someone else, potentially leading to a security breach and handing control of the account to a third party.
+
+By validating contact information early in the process, you can help prevent these issues and ensure a smooth user experience. This not only benefits your users but also helps to maintain the integrity and security of your service.
+
+## Don't make a username immutable
+
+First of all, even if you let user's change their username, it is a good idea to not let others to use their old name. For more details [read this](https://www.computerworld.com/article/2838283/facebook-yahoo-prevent-use-of-recycled-email-addresses-to-hijack-accounts.html).
+
+To accommodate users who wish to modify their usernames, a solution is to offer aliases and let users choose their primary alias. This feature can be augmented with additional business rules as necessary, such as restricting the number of username changes per year or limiting display and contact options to the primary username. For email address providers, it's important to never re-issue email addresses. However, old email addresses can be aliased to new ones. In fact, forward-thinking email address providers might enable users to use their own domain name and select any email address they desire.
+
+## Let user close the account and delete the data automatically
+
+Some services intentionally require users to contact their support team before closing their accounts, as this allows the team to address any potential issues and potentially retain the user. However, in an ideal world, all user-generated data should be deleted along with the account. This must be balanced against compliance requirements such as PCI and GDPR, as well as the impact on other users' experiences and system security.
+
+One solution is to allow users to schedule their account for automatic deletion at a future date. In some cases, specific procedures must be followed in accordance with industry regulations, such as for medical or financial records.
+
+## Access to resource should have a reasonable time limit
+
+Whenever user is authenticated, it should not be trusted forever. There is a [NIST guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html#sessionreauthn) about session management and authentication assurance levels.
+
+Sensitive actions such as account deletion or money transfer may require additional security checks. It is advisable to request a password or send an OTP code to confirm these sensitive operations.
+
+Sessions should have a time threshold, after which the user must provide a password, a second factor of authentication, or log out. It is essential to determine the length of time a user can be inactive before re-authenticating. Verification of user identity is necessary for all active sessions if a password reset is initiated. Authentication or a second factor is required if a user modifies significant aspects of their profile or performs sensitive operations. Re-authentication is necessary if the user's location changes significantly in a short time. It may be necessary to prevent users from logging in from multiple devices or locations simultaneously.
+
+When a user session expires or requires re-authentication, prompt the user in real-time or provide a mechanism to save any unsaved activity since their last authentication. It can be frustrating for a user to spend a lot of time filling out a form, only to lose all their input and must log in again.
+
+## Use MFA (Multi Factor Authentication)
+
+MFA is also known as 2FA, 2-step verification, two-factor authentication.
+
+2FA stands for "Two-Factor Authentication," which is a security measure used to protect online accounts from unauthorized access.
+
+With 2FA, users must provide two forms of authentication to verify their identity when logging into an account. The first factor is usually a password, while the second factor is typically something the user possesses, such as a mobile device or a security key.
 
 
+First of all, SMS codes are not secure!!! and have been [deprecated by NIST](https://www.nist.gov/blogs/cybersecurity-insights/questionsand-buzz-surrounding-draft-nist-special-publication-800-63-3). You have to have a good reason to keep this method. Unfortunately it is still very popular. 
+
+There are many alternatives to SMS 2FA that are more secure and affordable. As you have to pay for every single SMS send to the user 😱.
+- using TOTP with apps like Google Authenticator or Authy
+- email verification code
+- email "magic link"
+-  confirmation on mobile apps like Google's Mail app or Adobe's "Account Access" app, 
+- hardware security key
+- FIDO
+
+It's important to note that the security of your user accounts depends on the strength of the 2FA or account recovery method you choose to use.
+
+## Make user IDs case-insensitive
+
+Your users may not be concerned about or able to recall the exact case of their username. Therefore, usernames should be fully case-insensitive. Storing usernames and email addresses in all lowercase and converting any input to lowercase before comparison is a straightforward task. Be sure to specify a locale or use Unicode normalization during any transformations.
+
+It's essential to keep in mind that the world utilizes not only Latin letters, but also various non-Latin scripts. Therefore, user IDs should be case-insensitive for all Unicode characters, not just Latin letters.
+
+The proportion of smartphones used by users is constantly increasing. Most smartphones provide autocorrect and automatic capitalization for plain-text fields. Prohibiting this behavior at the UI level may not be desirable or entirely successful, and your service must be robust enough to handle email addresses or usernames that were accidentally auto-capitalized.
+
+## Always check the most recent security best-practices and guidelines
 
 
-
-
-
-
- The mains rules for hash algorithms are:
- - should be [salted](https://en.wikipedia.org/wiki/Salt_(cryptography)) for each user individually
- - do not user deprecate hash algorithms: MD5, SHA1
- The hash should be salted with a value unique to that specific login credential. Do not use deprecated hashing technologies such as MD5, SHA1 and under no circumstances should you use reversible encryption or try to invent your own hashing algorithm. Use a pepper that is not stored in the database to further protect the data in case of a breach. Consider the advantages of iteratively re-hashing the password multiple times.
-
-Design your system assuming it will be compromised eventually. Ask yourself "If my database were exfiltrated today, would my users' safety and security be in peril on my service or other services they use?” As well as “What can we do to mitigate the potential for damage in the event of a leak?"
-
-Another point: If you could possibly produce a user's password in plaintext at any time outside of immediately after them providing it to you, there's a problem with your implementation.
-
-If your system requires detection of near-duplicate passwords, such as changing "Password" to "pAssword1", save the hashes of common variants you wish to ban with all letters normalized and converted to lowercase. This can be done when a password is created or upon successful login for pre-existing accounts. When the user creates a new password, generate the same type of variants and compare the hashes to those from the previous passwords. Use the same level of hashing security as with the actual password. 
+## Check the data breach database for your user
