@@ -2,56 +2,54 @@
 
 ## Intro
 
-Native login (previously known as "Identifo") is customer identity system. You can quickly add user authentication to your applications in minutes.
+NativeLogin (formerly known as "Identifo") is a customer identity system. With this tool, you can quickly implement user authentication in your applications, taking just a few minutes to set up.
 
 The main ideas of NativeLogin are:
-- no security compromise (use the latest best practices)
-- easy and painless for the users (you should not loose your customers who struggle with secure identity system)
-- cloud-native - created to live in managed cloud like k8s or ecs with easy horizontal scale and integrations with cloud-native infrastructure
-- effortless setup and integration: 5 minutes to setup and run
-- NativeLogin uses native-platform authentications tools for every platform:
+- Uncompromising security (uses latest best practices)
+- Ease and painlessness for the users (you should not loose your customers who struggle with secure identity system)
+- Cloud-nativeness: created to live in managed Kubernetes solutions (GKE, EKS, AKS), or platform-specific container orchestration services like AWS ECS, with easy horizontal scaling and integrations with cloud-native infrastructure
+- Effortless setup and integration: just a few minutes to setup and run
+
+NativeLogin uses native authentication tools for every popular platform:
   - OIDC for web
     - JWK access, refresh and id tokens
     - JWKS introspection
-    - userinfo endpoint
+    - `/userinfo` endpoint
     - OIDC scopes
-    - self-hosted web login pages
-    - platform-hosted customizable web login app
-    - web authentication api with face ID and touch ID for apple devices
-    - login with Apple for web
-  - iOS and maOS:
-    - one tap security upgrade
-    - iCloud Private relay
-    - KeyChain integration
-    - associated domains
-    - deep linking
-    - device token management
-    - sign in with apple
+    - Self-hosted web login pages
+    - Platform-hosted customizable web login app
+    - Web authentication API with Face ID and Touch ID for Apple devices
+    - Login with Apple for web
+  - iOS and macOS:
+    - One-tap security upgrade
+    - iCloud Private Relay
     - iCloud Keychain verification codes
     - Passkeys in iCloud Keychain
+    - KeyChain integration
+    - Associated domains
+    - Deep linking
+    - Device token management
+    - Sign in with Apple
     - TVOS simple sign in
-    - integrates Private Access Tokens Challenge instead of captcha
-  - Android devices
-    -  login with Apple for Android
+    - Integrates Private Access Tokens Challenge instead of captcha
+  - Android:
+    - Login with Apple for Android
     - Native Sign in with Google
-    - integration with Google platform information
+    - Integration with Google platform information
     - Biometric login
     - Autofill features
     - Account Manager integration
     - Native OAuth2 service authentication flow
     - Custom Account type support
 
-
-As you can see Native Login is design to use native platform tools.
-
-
+As you can see, NativeLogin is designed to utilize the native tools available on the platform.
 
 ## Sections
 
-- Start Building
-  - native iOS app
-  - native Android app
-  - mobile Flutter app
+- Start building
+  - Native iOS app
+  - Native Android app
+  - Mobile Flutter app
   - Web SPA app
   - Regular Web app
   - Backend
@@ -67,33 +65,30 @@ As you can see Native Login is design to use native platform tools.
   - APIs
   - Dashboard
   - Integrations
-    - databases
-    - email
-    - sms
-    - storage
-    - auth gateways
-    - strapi integration
+    - Databases
+    - Email
+    - SMS
+    - Storage
+    - Auth Gateways
+    - Strapi integration
     - Webflow integration
   - Plugin system
-    - storage
-    - hooks
-    - monitoring
-    - tokens payload
-    - authz with Open Policy Agent
+    - Storage
+    - Hooks
+    - Monitoring
+    - Token payload
+    - Authz with Open Policy Agent
   - Customization
-    - login screens customization
-    - custom login screens
-    - email customization
-    - sms customization
-    - custom login flows with management API
+    - Login screens
+    - Email
+    - SMS
+    - Login flows with management API
 - Plan and Design
   - Authentication flows
   - Architecture scenarios
     - SPA with backend and admin panel
-    - mobile apps, admin panel, web app and M2M integration
+    - Mobile apps, admin panel, web app and M2M integration
   - Best practices
   - Professional services
 - IM system and security in depth
-  - the most secure web authentication
-  - 
-
+  - The most secure web authentication
