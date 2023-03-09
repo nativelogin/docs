@@ -157,5 +157,24 @@ The proportion of smartphones used by users is constantly increasing. Most smart
 
 ## Always check the most recent security best-practices and guidelines
 
+The field of cybersecurity is expanding rapidly every day, encompassing both hackers and developers. It's crucial to ensure that all software is kept up-to-date by taking the following steps: updating tools, frameworks, and migrating from deprecated tools and frameworks, and discontinuing the use of insecure methods (such as SMS 2FA or SHA1). Additionally, it's important to read and implement the latest recommendations. To stay informed, you can rely on a list of trusted resources that should be followed, including:
+
+ - [The National Institute of Standards and Technology (NIST)](https://www.nist.gov/): NIST provides cybersecurity frameworks, guidelines, and best practices for various sectors, including government, healthcare, and finance.
+- [The Cybersecurity and Infrastructure Security Agency (CISA)](https://www.cisa.gov/): CISA is a government agency responsible for protecting the nation's critical infrastructure from cyber threats. They provide resources and guidance for both individuals and organizations on cybersecurity best practices.
+- Your local regulator, for Australia it is [ACSC](https://www.cyber.gov.au/).
+- [The Open Web Application Security Project (OWASP)](https://cheatsheetseries.owasp.org/index.html): OWASP is a nonprofit organization that provides information and tools for web application security. They offer resources for developers, organizations, and individuals to improve their web application security.
+
 
 ## Check the data breach database for your user
+
+To enhance the security of your customers, there are several measures that can be taken:
+
+- Implement password-manager friendly input fields to make it easier for customers to use a password manager.
+- Use simple language when communicating with customers to ensure that they understand the importance of security measures.
+- Enforce periodic password changes and encourage customers to check backup codes for added security. If the highest level of security is desired, consider the use of hardware keys.
+
+
+It is important to regularly check users' passwords using breach databases such as ["Have I been pwned?"](https://haveibeenpwned.com). This is necessary because users often reuse the same password across multiple services, and even if all the above-mentioned measures are implemented, the passwords could still be exposed if a third-party service is breached and the passwords are stored in plain text at those 3rd party service because ignoring these security rules.
+
+To prevent such incidents, it is recommended to block all passwords that have been leaked and to notify users to reset their passwords immediately when a data breach is identified.
+
