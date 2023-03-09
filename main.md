@@ -46,49 +46,50 @@ As you can see, NativeLogin is designed to utilize the native tools available on
 
 ## Sections
 
-- Start building
-  - Native iOS app
-  - Native Android app
-  - Mobile Flutter app
-  - Web SPA app
-  - Regular Web app
-  - Backend
+- [ ] Start building
+  - [ ] Native iOS app
+  - [ ] Native Android app
+  - [ ] Mobile Flutter app
+  - [ ] Web SPA app
+  - [ ] Regular Web app
+  - [ ] Backend
 - Learn basics
-  - Identity fundamentals
-  - NativeLogin overview
-  - JWT tokens
-  - Compare with other tools
-- Configure NativeLogin
-  - Service settings
-  - Deployment
-  - Applications in NativeLogin
-  - APIs
-  - Dashboard
-  - Integrations
-    - Databases
-    - Email
-    - SMS
-    - Storage
-    - Auth Gateways
-    - Strapi integration
-    - Webflow integration
-  - Plugin system
-    - Storage
-    - Hooks
-    - Monitoring
-    - Token payload
-    - Authz with Open Policy Agent
-  - Customization
-    - Login screens
-    - Email
-    - SMS
-    - Login flows with management API
-- Plan and Design
-  - Authentication flows
-  - Architecture scenarios
-    - SPA with backend and admin panel
-    - Mobile apps, admin panel, web app and M2M integration
-  - Best practices
-  - Professional services
-- IM system and security in depth
-  - The most secure web authentication
+  - [x] Identity fundamentals
+  - [ ] NativeLogin overview
+  - [ ] JWT tokens
+  - [ ] Compare with other tools
+- [ ] Configure NativeLogin
+  - [ ] Service settings
+  - [ ] Deployment
+  - [ ] Applications in NativeLogin
+  - [ ] APIs
+  - [ ] Localization
+  - [ ] Dashboard
+  - [ ] Integrations
+    - [ ] Databases
+    - [ ] Email
+    - [ ] SMS
+    - [ ] Storage
+    - [ ] Auth Gateways
+    - [ ] Strapi integration
+    - [ ] Webflow integration
+  - [ ] Plugin system
+    - [ ] Storage
+    - [ ] Hooks
+    - [ ] Monitoring
+    - [ ] Token payload
+    - [ ] Authz with Open Policy Agent
+  - [ ] Customization
+    - [ ] Login screens
+    - [ ] Email
+    - [ ] SMS
+    - [ ] Login flows with management API
+- [ ] Plan and Design
+  - [ ] Authentication flows
+  - [ ] Architecture scenarios
+    - [ ] SPA with backend and admin panel
+    - [ ] Mobile apps, admin panel, web app and M2M integration
+  - [x] Best practices
+  - [ ] Professional services
+- [ ] IM system and security in depth
+  - [ ] The most secure web authentication
